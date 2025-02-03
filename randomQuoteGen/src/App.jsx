@@ -13,21 +13,30 @@ function App() {
   ];
   const [index, setIndex] = useState(0);
 
+  const generateRandomColor = () => {
+    return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+  };
+
+  const handleClick = () => {
+    setIndex(Math.floor(Math.random() * quotes.length));
+  };
+
   return (
     <>
       <div
         style={{
-          backgroundColor: `#${Math.floor(Math.random() * 16777215).toString(
-            16
-          )}`,
+          backgroundColor: generateRandomColor(),
           padding: "20px",
+          minHeight: "100vh",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
         }}
       >
         <h1 className="container">Random Quote Generator</h1>
         <p className="container">{quotes[index]}</p>
-        <button
-          onClick={() => setIndex(Math.floor(Math.random() * quotes.length))}
-        >
+        <button onClick={handleClick}>
           <span>Generate Quote</span>
         </button>
       </div>
