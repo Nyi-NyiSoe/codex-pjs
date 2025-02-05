@@ -19,12 +19,10 @@ export default function UserForm() {
 
   return (
     // Add the form
-<UserForm>
-<form>
-        <label>Name:</label>
-        <input type="text" onChange={handleChange} />
-        <button onClick={handleSubmit}>Submit</button>
-      </form>
-</UserForm>
+    <form>
+      <label>Name:</label>
+      <input type="text" onChange={handleChange} />
+      <button onClick={handleSubmit}>Submit</button>
+    </form>
   );
 }

@@ -1,7 +1,10 @@
 import React, { createContext, useState } from "react";
 
 // the UserContext
-export const UserContext = createContext();
+export const UserContext = createContext({
+  name: "",
+  setName: () => {},
+});
 
 // the UserProvider component
 export function UserProvider({ children }) {
